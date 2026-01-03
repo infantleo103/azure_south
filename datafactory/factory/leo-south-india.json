@@ -1,0 +1,9 @@
+{
+	"name": "leo-south-india",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1376fe67-ebba-4f77-8965-30a01cecf79a",
+		"tenantId": "1780c1e5-753d-4fb4-936d-fc612fcfde6f"
+	}
+}
