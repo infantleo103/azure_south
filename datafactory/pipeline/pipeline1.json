@@ -26,10 +26,44 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "customersource",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "sales",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -49,13 +83,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "customersource",
+						"referenceName": "sales",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "sales",
 						"type": "DatasetReference"
 					}
 				]
