@@ -87,8 +87,7 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "PreserveHierarchy"
+							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -114,7 +113,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "sales",
+						"referenceName": "sink",
 						"type": "DatasetReference"
 					}
 				]
